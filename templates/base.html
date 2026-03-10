@@ -1,1 +1,44 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junto - Do More Together</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
+        nav {
+            background: linear-gradient(135deg, #6C63FF, #FF6584);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">⚡ Junto</span>
+        <div>
+            <a href="/">Home</a>
+            <a href="/feed">Feed</a>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
