@@ -4,6 +4,9 @@ import os
 
 app = Flask(__name__)
 
+with app.app_context():
+    init_db()
+    
 def get_db():
     conn = sqlite3.connect('junto.db')
     conn.row_factory = sqlite3.Row
