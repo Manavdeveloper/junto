@@ -4,8 +4,6 @@ import os
 
 app = Flask(__name__)
 
-with app.app_context():
-    init_db()
     
 def get_db():
     conn = sqlite3.connect('junto.db')
@@ -45,6 +43,9 @@ def init_db():
         conn.executemany('INSERT INTO activities (title, category, location, datetime, spots, host) VALUES (?,?,?,?,?,?)', dummy)
     conn.commit()
     conn.close()
+    
+    with app.app_context():
+    init_db()
 
 @app.route('/')
 def index():
