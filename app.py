@@ -45,7 +45,7 @@ def init_db():
     conn.close()
     
 with app.app_context():
-init_db()
+    init_db()
 
 @app.route('/')
 def index():
