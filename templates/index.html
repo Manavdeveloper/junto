@@ -1,58 +1,92 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div style="text-align:center; padding: 60px 20px 40px;">
-    <h1 style="font-size: 48px; font-weight: 900; background: linear-gradient(135deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-        Do More Together.
+<div style="text-align:center; padding: 60px 20px 40px; background: linear-gradient(160deg, #faf8f3 0%, #fff2e8 100%);">
+    <div style="display:inline-block; background:#fff2e8; color:#854f0b; font-size:13px; font-weight:700; padding:6px 16px; border-radius:50px; margin-bottom:20px;">
+        Now accepting early members
+    </div>
+    <h1 style="font-size: clamp(36px, 7vw, 64px); font-weight: 500; color: #2c1a00; line-height: 1.15; margin-bottom: 16px;">
+        Show up.<br>Do more.<br>Together.
     </h1>
-    <p style="font-size: 20px; color: #555; margin: 16px 0 32px;">
-        Junto connects you with real people doing real things —<br>
-        workouts, study sessions, networking, and more.
+    <p style="font-size: 18px; color: #888; max-width: 480px; margin: 0 auto 32px; line-height: 1.7;">
+        Junto connects you with real people doing real things — workouts, study sessions, networking, clubs, and more.
     </p>
 
     {% if request.args.get('joined') %}
-    <div style="background: #d4edda; color: #155724; padding: 12px 24px; border-radius: 8px; display: inline-block; margin-bottom: 24px;">
+    <div style="background:#fff2e8; color:#854f0b; padding:12px 24px; border-radius:50px; display:inline-block; margin-bottom:24px; font-weight:700;">
         🎉 You're on the list! We'll let you know when we launch.
     </div>
     {% endif %}
 
-    <form action="/waitlist" method="POST" style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
-        <input type="email" name="email" placeholder="Enter your email" required
-            style="padding: 14px 20px; border-radius: 8px; border: 2px solid #6C63FF; font-size: 16px; width: 280px;">
+    <form action="/waitlist" method="POST" style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+        <input type="email" name="email" placeholder="your@email.com" required
+            style="padding:14px 20px; border-radius:50px; border:1.5px solid #e8e0d0; font-size:15px; width:260px; outline:none; background:#fff; color:#2c1a00;">
         <button type="submit"
-            style="padding: 14px 28px; background: linear-gradient(135deg, #6C63FF, #FF6584); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer;">
-            Join Waitlist
+            style="padding:14px 28px; background:#d4600a; color:white; border:none; border-radius:50px; font-size:15px; font-weight:500; cursor:pointer;">
+            Get early access
         </button>
     </form>
-</div>
+    <div style="color:#bbb; font-size:12px; margin-bottom:32px;">Free forever for early members · No spam, ever</div>
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px;">
-    <div style="background: white; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-        <div style="font-size: 36px;">🏃</div>
-        <h3 style="margin: 12px 0 8px;">Sports & Fitness</h3>
-        <p style="color: #777;">Find workout buddies and training partners near you.</p>
-    </div>
-    <div style="background: white; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-        <div style="font-size: 36px;">📚</div>
-        <h3 style="margin: 12px 0 8px;">Study & Cowork</h3>
-        <p style="color: #777;">Stay productive with people who share your goals.</p>
-    </div>
-    <div style="background: white; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-        <div style="font-size: 36px;">💼</div>
-        <h3 style="margin: 12px 0 8px;">Networking</h3>
-        <p style="color: #777;">Meet ambitious people and grow your circle.</p>
-    </div>
-    <div style="background: white; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
-        <div style="font-size: 36px;">🌍</div>
-        <h3 style="margin: 12px 0 8px;">Start a Club</h3>
-        <p style="color: #777;">Become a regional leader and build your community.</p>
+    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+        <span style="background:#fff2e8; color:#854f0b; font-size:13px; font-weight:500; padding:6px 14px; border-radius:50px;">🏃 Running Club</span>
+        <span style="background:#fff2e8; color:#854f0b; font-size:13px; font-weight:500; padding:6px 14px; border-radius:50px;">📚 Book Club</span>
+        <span style="background:#fff2e8; color:#854f0b; font-size:13px; font-weight:500; padding:6px 14px; border-radius:50px;">🌱 Green Club</span>
+        <span style="background:#fff2e8; color:#854f0b; font-size:13px; font-weight:500; padding:6px 14px; border-radius:50px;">💼 Networking</span>
+        <span style="background:#fff2e8; color:#854f0b; font-size:13px; font-weight:500; padding:6px 14px; border-radius:50px;">🚀 Builders</span>
     </div>
 </div>
 
-<div style="text-align: center; margin-top: 48px;">
-    <a href="/feed" style="background: white; border: 2px solid #6C63FF; color: #6C63FF; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 700; text-decoration: none;">
-        Browse Activities →
-    </a>
+<!-- HOW IT WORKS -->
+<div style="padding:72px 24px; background:#fff;">
+    <div style="max-width:600px; margin:0 auto;">
+        <div style="font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:#d4600a; margin-bottom:10px;">How it works</div>
+        <h2 style="font-size:clamp(24px,4vw,36px); font-weight:500; color:#2c1a00; margin-bottom:40px;">Three steps to doing more</h2>
+        <div style="display:flex; flex-direction:column; gap:20px;">
+            <div style="display:flex; gap:16px; align-items:flex-start; background:#faf8f3; border:0.5px solid #e8e0d0; border-radius:16px; padding:20px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#fff2e8; color:#d4600a; font-size:16px; font-weight:500; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</div>
+                <div><h3 style="font-size:15px; font-weight:500; color:#2c1a00; margin-bottom:4px;">Post an activity</h3><p style="font-size:13px; color:#888; line-height:1.6;">Share what you want to do — a run, study session, or networking event. Set the time, place, and spots.</p></div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:flex-start; background:#faf8f3; border:0.5px solid #e8e0d0; border-radius:16px; padding:20px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#fff2e8; color:#d4600a; font-size:16px; font-weight:500; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</div>
+                <div><h3 style="font-size:15px; font-weight:500; color:#2c1a00; margin-bottom:4px;">Find your people</h3><p style="font-size:13px; color:#888; line-height:1.6;">Browse activities near you across sports, study, socializing, and career networking. Join in one tap.</p></div>
+            </div>
+            <div style="display:flex; gap:16px; align-items:flex-start; background:#faf8f3; border:0.5px solid #e8e0d0; border-radius:16px; padding:20px;">
+                <div style="width:36px; height:36px; border-radius:50%; background:#fff2e8; color:#d4600a; font-size:16px; font-weight:500; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</div>
+                <div><h3 style="font-size:15px; font-weight:500; color:#2c1a00; margin-bottom:4px;">Show up and grow</h3><p style="font-size:13px; color:#888; line-height:1.6;">Meet people, build habits, and level up your life — one activity at a time.</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CLUBS -->
+<div style="padding:72px 24px; background:#faf8f3;">
+    <div style="max-width:700px; margin:0 auto;">
+        <div style="font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:#d4600a; margin-bottom:10px;">Coming soon</div>
+        <h2 style="font-size:clamp(24px,4vw,36px); font-weight:500; color:#2c1a00; margin-bottom:32px;">Start a club in your city</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(140px,1fr)); gap:12px;">
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">🏃</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Running Club</div></div>
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">📚</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Book Club</div></div>
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">🌱</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Green Club</div></div>
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">🚀</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Builders</div></div>
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">🎵</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Music & Jam</div></div>
+            <div style="background:#fff; border:0.5px solid #e8e0d0; border-radius:14px; padding:20px 16px; text-align:center;"><div style="font-size:24px; margin-bottom:8px;">🎨</div><div style="font-size:13px; font-weight:500; color:#2c1a00;">Art & Creative</div></div>
+        </div>
+    </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div style="background:#2c1a00; padding:72px 24px; text-align:center;">
+    <h2 style="color:#fff; font-size:clamp(24px,4vw,40px); font-weight:500; margin-bottom:12px;">Ready to do more?</h2>
+    <p style="color:rgba(255,255,255,0.4); font-size:16px; margin-bottom:32px;">Join hundreds of people already on the waitlist.</p>
+    <form action="/waitlist" method="POST" style="display:flex; justify-content:center; gap:8px; flex-wrap:wrap;">
+        <input type="email" name="email" placeholder="your@email.com" required
+            style="padding:14px 20px; border-radius:50px; border:1.5px solid rgba(255,255,255,0.2); font-size:15px; width:260px; outline:none; background:rgba(255,255,255,0.08); color:#fff;">
+        <button type="submit"
+            style="padding:14px 28px; background:#fff; color:#2c1a00; border:none; border-radius:50px; font-size:15px; font-weight:500; cursor:pointer;">
+            Join the waitlist now →
+        </button>
+    </form>
 </div>
 
 {% endblock %}
