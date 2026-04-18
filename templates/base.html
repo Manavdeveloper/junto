@@ -3,30 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Junto - Do More Together</title>
+    <title>Junto — Do More Together</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; }
+        body { font-family: 'Segoe UI', sans-serif; background: #faf8f3; color: #2c1a00; }
         nav {
-            background: linear-gradient(135deg, #6C63FF, #FF6584);
             padding: 16px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: rgba(250,248,243,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 0.5px solid #e8e0d0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            color: #2c1a00;
+            font-size: 20px;
+            font-weight: 500;
         }
         nav a {
-            color: white;
+            color: #888;
             text-decoration: none;
-            font-weight: 600;
-            margin-left: 16px;
+            font-size: 14px;
+            margin-left: 20px;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+        nav a:hover { color: #2c1a00; }
+        nav .nav-cta {
+            background: #d4600a;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-left: 16px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -35,10 +51,9 @@
         <div>
             <a href="/">Home</a>
             <a href="/feed">Feed</a>
+            <a href="/feed" class="nav-cta">Browse activities</a>
         </div>
     </nav>
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+    {% block content %}{% endblock %}
 </body>
 </html>
